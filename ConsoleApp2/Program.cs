@@ -142,4 +142,25 @@ for (int i = 0; i < array.Length; i++)
     Console.WriteLine(array[i]);
 }
 
+//task15
+Console.WriteLine("task15");
+for (int i = 1; i < array.Length; i++)
+{
+    var key = array[i];
+    var flag = 0;
+    for (int j = i - 1; j >= 0 && flag != 1; )
+    {
+        if (key > array[j])
+        {
+            array[j + 1] = array[j];
+            j--;
+            array[j + 1] = key;
+        }
+        else flag = 1;
+    }
+}
 
+for (int i = 0; i < array.Length; i++)
+{
+    Console.WriteLine(array[i]);
+}
